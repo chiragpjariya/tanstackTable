@@ -25,27 +25,23 @@ function Table() {
             accessorKey: 'gender'
         }
     ]
-
-
     const [sorting, setSorting] = useState([])
     const [filtering, setFiltering] = useState([])
 
     const table = useReactTable({
         data,
         columns,
-        getCoreRowModel: getCoreRowModel(),
-        getPaginationRowModel: getPaginationRowModel(),
-        getSortedRowModel: getSortedRowModel(),
-        getFilteredRowModel: getFilteredRowModel(),
-        state: {
-            sorting: sorting,
-            globalFilter: filtering
+        getCoreRowModel:getCoreRowModel(),
+        getPaginationRowModel:getPaginationRowModel(),
+        getSortedRowModel:getSortedRowModel(),
+        getFilteredRowModel:getFilteredRowModel(),
+        state:{
+            sorting:sorting,
+            globalFilter:filtering
         },
-        onSortingChange: setSorting,
-        onGlobalFilterChange: filtering,
+        onGlobalFilterChange:setFiltering,
+        onSortingChange:setSorting
     })
-
-
 
     return (
         <>
